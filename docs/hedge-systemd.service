@@ -1,0 +1,13 @@
+[Unit]
+Description=Hedging Agent for MetaTrader5
+After=network.target
+
+[Service]
+User=mt5user
+WorkingDirectory=/home/mt5user/Meta.ai
+ExecStart=/usr/bin/python3 /home/mt5user/Meta.ai/Agents/hedging_agent.py
+Restart=on-failure
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
